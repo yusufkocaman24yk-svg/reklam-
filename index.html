@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CepGarson - Tam Akış Simülasyonu</title>
+    <title>CepGarson - Doğru Akış Simülasyonu</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #0f172a; color: #f8fafc; padding: 15px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
@@ -33,15 +33,15 @@
             <div class="step-box active" id="step1">
                 <div class="step-title">1. Müşteri Paneli & Menü Seçimi</div>
                 <div class="step-desc">
-                    Müşteri doğrudan <span class="highlight">müşteri paneline girerek menüyü görüntüler</span>. İstediği yemekleri, içecekleri seçip sepetine ekler.
+                    Müşteri uygulamaya girer ve <span class="highlight">menüyü doğrudan görüntüler</span>. İstediği ürünleri seçip sepetine ekler. (Önceden QR okutma zorunluluğu yoktur).
                 </div>
             </div>
 
             <!-- Adım 2 -->
             <div class="step-box" id="step2">
-                <div class="step-title">2. Sepeti Onayla & Masa QR Kod Tarama</div>
+                <div class="step-title">2. Sepeti Onayla & Masanın QR Kodunu Okutma</div>
                 <div class="step-desc">
-                    Müşteri sepetini tamamlayıp <span class="highlight">"Sepeti Onayla"</span> butonuna basar. Sistem otomatik olarak kamera ile QR tarayıcıyı açar. Müşteri oturduğu masanın QR kodunu okutur (Örn: Masa 1).
+                    Müşteri sepetini hazırlayıp <span class="highlight">"Sepeti Onayla"</span> dediğinde telefonun kamerasıyla <span class="highlight">QR kod okuyucu açılır</span>. Masadaki QR kod okutulur (Örn: Masa 1), böylece siparişin hangi masadan geldiği netleşir.
                 </div>
             </div>
 
@@ -49,15 +49,15 @@
             <div class="step-box" id="step3">
                 <div class="step-title">3. Garsonu Beklemeden Mutfak Fişi</div>
                 <div class="step-desc">
-                    QR kod eşleştiği an sipariş garsona gerek kalmadan <span class="highlight">doğrudan mutfaktaki termal yazıcıdan</span> Masa 1 etiketiyle fiş olarak çıkar.
+                    Sipariş onaylandığı an garsonu beklemeye gerek kalmadan mutfaktaki termal yazıcıdan <span class="highlight">otomatik olarak fiş çıkar</span>. Süreç tamamen hatasız ilerler.
                 </div>
             </div>
 
             <!-- Adım 4 -->
             <div class="step-box" id="step4">
-                <div class="step-title">4. Satıcı Paneli & PIN Korumalı Düzeltme</div>
+                <div class="step-title">4. Satıcı Paneli, Gün Sonu & PIN Koruması</div>
                 <div class="step-desc">
-                    İşletme sahibi gün sonu raporlarını alır. Fiş iptali veya tutar düzeltmesi mi gerekiyor? Yetkisiz kimse dokunamasın diye <span class="highlight">önceden oluşturulmuş özel PIN kodu</span> girilmeden işlem yapılamaz!
+                    İşletme sahibi panelden gün sonu raporlarını alır. Satış fişlerinde iptal veya düzeltme yapmak istendiğinde, yetkisiz kimse dokunamasın diye <span class="highlight">önceden oluşturulmuş özel PIN kodu</span> zorunludur!
                 </div>
             </div>
         </div>
