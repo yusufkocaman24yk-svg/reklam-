@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CepGarson - Canlı Sistem Simülasyonu</title>
+    <title>CepGarson - Tam Akış Simülasyonu</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
         body { background: #0f172a; color: #f8fafc; padding: 15px; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .phone-frame { width: 100%; max-width: 400px; background: #1e293b; border-radius: 30px; border: 4px solid #334155; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; height: 750px; }
+        .phone-frame { width: 100%; max-width: 400px; background: #1e293b; border-radius: 30px; border: 4px solid #334155; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); display: flex; flex-direction: column; height: 780px; }
         .screen-header { background: #0284c7; color: white; padding: 15px; text-align: center; font-weight: bold; font-size: 18px; }
         .screen-body { padding: 20px; flex: 1; overflow-y: auto; display: flex; flex-direction: column; justify-content: space-between; }
-        .step-box { background: #334155; padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 5px solid #38bdf8; display: none; animation: fadeIn 0.5s ease-in-out; }
+        .step-box { background: #334155; padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 5px solid #38bdf8; display: none; animation: fadeIn 0.4s ease-in-out; }
         .step-box.active { display: block; }
         .step-title { font-size: 16px; font-weight: bold; color: #38bdf8; margin-bottom: 8px; }
-        .step-desc { font-size: 13px; color: #94a3b8; line-height: 1.4; }
+        .step-desc { font-size: 13px; color: #94a3b8; line-height: 1.5; }
         .btn-container { display: flex; gap: 10px; margin-top: 15px; }
         .action-btn { flex: 1; background: #22c55e; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 14px; text-align: center; }
         .action-btn.secondary { background: #475569; }
@@ -25,31 +25,31 @@
 <body>
 
 <div class="phone-frame">
-    <div class="screen-header" id="headerTitle">CepGarson Tanıtım</div>
+    <div class="screen-header" id="headerTitle">CepGarson İşleyişi</div>
     <div class="screen-body">
         
         <div id="stepsContainer">
             <!-- Adım 1 -->
             <div class="step-box active" id="step1">
-                <div class="step-title">1. QR Kod Okutma & Menü</div>
+                <div class="step-title">1. Müşteri Paneli & Menü Seçimi</div>
                 <div class="step-desc">
-                    Müşteri masadaki <span class="highlight">QR kodu telefonuna okutur</span>. Garsonu beklemek yok; menü saniyesinde telefonunda açılır, ürünleri seçip sepetine ekler.
+                    Müşteri doğrudan <span class="highlight">müşteri paneline girerek menüyü görüntüler</span>. İstediği yemekleri, içecekleri seçip sepetine ekler.
                 </div>
             </div>
 
             <!-- Adım 2 -->
             <div class="step-box" id="step2">
-                <div class="step-title">2. Sepeti Onayla & Masa Eşleşmesi</div>
+                <div class="step-title">2. Sepeti Onayla & Masa QR Kod Tarama</div>
                 <div class="step-desc">
-                    Müşteri <span class="highlight">"Sepeti Onayla"</span> dediğinde sistem hangi masada olduğunu teyit eder. Sipariş, garson çağrılmadan doğrudan mutfağa ve sisteme iletilir.
+                    Müşteri sepetini tamamlayıp <span class="highlight">"Sepeti Onayla"</span> butonuna basar. Sistem otomatik olarak kamera ile QR tarayıcıyı açar. Müşteri oturduğu masanın QR kodunu okutur (Örn: Masa 1).
                 </div>
             </div>
 
             <!-- Adım 3 -->
             <div class="step-box" id="step3">
-                <div class="step-title">3. Otomatik Mutfak Fişi</div>
+                <div class="step-title">3. Garsonu Beklemeden Mutfak Fişi</div>
                 <div class="step-desc">
-                    Sipariş onaylandığı anda mutfaktaki Bluetooth/Wi-Fi termal yazıcıdan <span class="highlight">otomatik olarak fiş çıkar</span>. Mutfak hazırlığa hemen başlar, hata sıfıra iner.
+                    QR kod eşleştiği an sipariş garsona gerek kalmadan <span class="highlight">doğrudan mutfaktaki termal yazıcıdan</span> Masa 1 etiketiyle fiş olarak çıkar.
                 </div>
             </div>
 
@@ -57,7 +57,7 @@
             <div class="step-box" id="step4">
                 <div class="step-title">4. Satıcı Paneli & PIN Korumalı Düzeltme</div>
                 <div class="step-desc">
-                    İşletme sahibi gün sonu raporlarını tek tıkla görür. Fiş iptali veya tutar düzeltmesi mi gerekiyor? Yetkisiz kimse dokunamasın diye <span class="highlight">önceden belirlenmiş özel PIN kodu</span> girilmeden işlem yapılamaz!
+                    İşletme sahibi gün sonu raporlarını alır. Fiş iptali veya tutar düzeltmesi mi gerekiyor? Yetkisiz kimse dokunamasın diye <span class="highlight">önceden oluşturulmuş özel PIN kodu</span> girilmeden işlem yapılamaz!
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
             <div class="indicator" id="stepIndicator">Adım 1 / 4</div>
             <div class="btn-container">
                 <button class="action-btn secondary" id="prevBtn" onclick="changeStep(-1)" style="display:none;">Geri</button>
-                <button class="action-btn" id="nextBtn" onclick="changeStep(1)">İleri / Simüle Et</button>
+                <button class="action-btn" id="nextBtn" onclick="changeStep(1)">Sonraki Adım</button>
             </div>
         </div>
 
@@ -80,10 +80,9 @@
     function changeStep(direction) {
         currentStep += direction;
         if (currentStep < 1) currentStep = 1;
-        if (currentStep > totalSteps) currentStep = 1; // Başa dönsün
+        if (currentStep > totalSteps) currentStep = 1;
 
         for (let i = 1; i <= totalSteps; i++) {
-            document.getElementById('step2' + i)?.classList.remove('active'); // güvenlik
             document.getElementById('step' + i).classList.remove('active');
         }
 
@@ -93,17 +92,8 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         
-        if (currentStep > 1) {
-            prevBtn.style.display = 'block';
-        } else {
-            prevBtn.style.display = 'none';
-        }
-
-        if (currentStep === totalSteps) {
-            nextBtn.innerText = "Başa Dön";
-        } else {
-            nextBtn.innerText = "İleri / Simüle Et";
-        }
+        prevBtn.style.display = currentStep > 1 ? 'block' : 'none';
+        nextBtn.innerText = currentStep === totalSteps ? "Başa Dön" : "Sonraki Adım";
     }
 </script>
 
